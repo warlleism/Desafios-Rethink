@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin-left:20px;">Atividade 2 / 3 / 4 / 5 / 6 / 7</h1>
+    <div class="container">
+        <span>Exercicio 2 </span>
+        <div>
+            <div id="name"></div>
+            <div id="age"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const name = document.querySelector('#name')
+    const age = document.querySelector('#age')
+
+    const pessoas = [
+        { name: "Fabiana Araújo", age: 33 },
+        { name: "Gabriel Gomes", age: 25 },
+        { name: "Fernando Henrique", age: 17 },
+        { name: "Ana Luiza", age: 2 }
+    ]
+
+    //Exercicio 2
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        pessoas.map((data) => {
+            let div = document.createElement('div');
+            div.id = 'container';
+            div.innerHTML = `${data.name}`;
+            div.className = 'container-dados';
+            name.appendChild(div);
+
+            let divIdade = document.createElement('div');
+            divIdade.id = 'container';
+            divIdade.innerHTML = `${data.age} anos`;
+            divIdade.className = 'container-dados';
+            age.appendChild(divIdade);
+
+        })
+
+
+    }, false);
+
+    //Exercicio 3
+
+    function GetName(name) {
+
+        pessoas.map((data) => {
+            if (data.name.includes(name))
+                console.log(data)
+        })
+    }
+
+    console.log("--- Exercicio 3 ---")
+    GetName('Gabriel Gomes')
+
+    //Exercicio 4
+
+    
+    var names = []
+
+    function VetorNames() {
+
+        pessoas.map((data) => {
+            names.push(data.name)
+        })
+
+        console.log(names)
+    }
+
+    console.log("--- Exercicio 4 ---")
+    VetorNames()
+
+
+    //Exercicio 5
+
+    const arrayPessoas = [
+        { name: "Fabiana Araújo", age: 33 },
+        { name: "Gabriel Gomes", age: 25 },
+        { name: "Fernando Henrique", age: 17 },
+        { name: "Ana Luiza", age: 2 },
+        { name: "Wesley Amorin", age: 32 },
+        { name: "Jeferson Alvez", age: 16 }
+    ]
+
+
+    for (let i = 0; i < arrayPessoas.length; i++) {
+        arrayPessoas[i] = { ...arrayPessoas[i], id: i }
+    }
+
+    console.log("--- Exercicio 5 ---")
+    console.log(arrayPessoas)
+
+
+    //Exercicio 6
+
+    const filterPessoas = arrayPessoas.filter((element, index, arr) => element.age >= 16)
+
+    console.log("--- Exercicio 6 ---")
+    console.log(filterPessoas)
+
+
+    //Exercicio 7
+
+
+    const reduceMediaIdade = arrayPessoas.reduce((a, b) => a + b.age, 0)
+    const media = reduceMediaIdade / arrayPessoas.length
+
+    console.log("--- Exercicio 7 ---")
+    console.log(parseInt(media))
+
+</script>
+
+</html>

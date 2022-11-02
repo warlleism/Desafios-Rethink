@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="margin-left:20px;">Atividade 1</h1>
+    <form action="">
+        <div class="container">
+            <span>Nome: </span>
+            <input type="text" onblur="GetName(event.target.value)">
+        </div>
+        <div class="container">
+            <span>Idade: </span>
+            <input type="number" onblur="GetAge(event.target.value)">
+        </div>
+        <div class="container">
+            <span>Profissão: </span>
+            <input type="text" onblur="GetProf(event.target.value)">
+        </div>
+        <div class="container">
+            <span>Email: </span>
+            <input type="text" onblur="GetEmail(event.target.value)">
+        </div>
+        <div class="container">
+            <span>Telefone: </span>
+            <input type="text" onblur="GetTel(event.target.value)">
+        </div>
+        <div class="container">
+            <span>Data de nascimento: </span>
+            <input type="date" onblur="GetBorn(event.target.value)">
+        </div>
+    </form>
+
+    <div>
+        <div class="container">
+            <span>Nome: </span>
+            <div id="name"></div>
+        </div>
+        <div class="container">
+            <span>Idade: </span>
+            <div id="age"></div>
+        </div>
+        <div class="container">
+            <span>Profissão: </span>
+            <div id="prof"></div>
+        </div>
+        <div class="container">
+            <span>Email: </span>
+            <div id="email"></div>
+        </div>
+        <div class="container">
+            <span>Telefone: </span>
+            <div id="tel"></div>
+        </div>
+        <div class="container">
+            <span>Data de nascimento: </span>
+            <div id="born"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const name = document.querySelector('#name')
+    const age = document.querySelector('#age')
+    const prof = document.querySelector('#prof')
+    const email = document.querySelector('#email')
+    const tel = document.querySelector('#tel')
+    const born = document.querySelector('#born')
+
+    function GetName(event) {
+        name.innerHTML = event
+    }
+    function GetAge(event) {
+        age.innerHTML = event
+
+    }
+    function GetProf(event) {
+        prof.innerHTML = event
+    }
+    function GetEmail(event) {
+        email.innerHTML = event
+    }
+    function GetTel(event) {
+        tel.innerHTML = event
+    }
+    function GetBorn(event) {
+        born.innerHTML = event
+    }
+</script>
+
+</html>
